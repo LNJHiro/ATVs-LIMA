@@ -315,7 +315,6 @@ body {
     
     .hero-card,
     .profile-card,
-    .contact-card,
     .projects-sidebar {
         grid-column: 1;
         grid-row: auto;
@@ -342,7 +341,6 @@ body {
 @media (max-width: 480px) {
     .hero-card,
     .profile-card,
-    .contact-card,
     .projects-sidebar {
         padding: 1.5rem;
         border-radius: 15px;
@@ -352,8 +350,98 @@ body {
         font-size: 1.3rem;
     }
     
-    .contact-button {
-        font-size: 1.2rem;
-    }
+}
+/* Adicione estas regras ao seu CSS existente */
+
+/* Correção para o link azul e estilização do contact-card */
+.contact-card {
+    background: linear-gradient(135deg, rgba(166, 119, 78, 0.1) 0%, var(--bg-light) 100%);
+    border-left: 3px solid var(--color-3);
 }
 
+.contact-card h1 {
+    color: var(--color-3);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.contact-button a {
+    color: var(--text-dark) !important; /* Força a cor escura */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-button a:hover {
+    color: var(--color-3) !important;
+}
+
+.contact-button a:visited {
+    color: var(--text-dark) !important;
+}
+
+.arrow {
+    color: var(--color-3);
+    transition: transform 0.3s ease;
+}
+
+.contact-button a:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* Ajustes para melhorar a semelhança com a imagem */
+.hero-card h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-1);
+    margin-bottom: 2rem;
+}
+
+.hero-card p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    max-width: 90%;
+}
+
+.profile-card {
+    border-left: 3px solid var(--color-2);
+}
+
+.projects-sidebar {
+    border-left: 3px solid var(--color-4);
+}
+
+/* Ajustes de tipografia */
+.owner-info h2 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.nav-links a {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Adicione esta classe para o título artístico grande */
+.artistic-title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 6rem;
+    font-weight: 700;
+    color: rgba(0,0,0,0.03);
+    z-index: -1;
+    pointer-events: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}

@@ -1,0 +1,43 @@
+/*Formatação de paragrafo*/
+
+p {
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
+    text-align: center;
+}     
+
+/*Formatação de título*/
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    font-weight: 700;
+    margin-left: 10px;
+    text-align: center;
+}
+h2 {
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+    text-align: center;
+}
+
+h1, h2 {
+    text-decoration: underline;
+}
+
+/*Formatação de link*/
+a {
+    color: rgb(247, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+}
