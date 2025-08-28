@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cadastro - Igreja Santo Antônio</title>
+    <link rel="stylesheet" href="PgInicial.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="ICONESig/church.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <h1>Igreja Santo Antônio</h1>
+            <ul>
+                <li><a href="PgInicial.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="Cadastro.html" class="active">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section class="sobre">
+        <h2>Cadastro para Eventos e Atividades</h2>
+        <p>Preencha os dados abaixo para participar de eventos, quermesses ou atividades paroquiais.</p>
+
+        <!-- Aqui futuramente o action="cadastro.php" -->
+        <form method="POST" action="">
+            <label>Nome Completo:</label><br>
+            <input type="text" name="nome" required><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+
+            <label>Telefone:</label><br>
+            <input type="tel" name="telefone" required><br><br>
+
+            <label>Selecione o Evento:</label><br>
+            <select name="evento" required>
+                <option value="quermesse">Quermesse</option>
+                <option value="retiro">Retiro Espiritual</option>
+                <option value="catequese">Catequese</option>
+                <option value="outro">Outro</option>
+            </select><br><br>
+
+            <button type="submit">Enviar Cadastro</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Igreja Santo Antônio - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
