@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de Estudo CSS</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="aula04.css">
+</head>
+<body>
+
+    <!-- ================== INLINE ================== -->
+    <h1 style="color: blue;">CSS Inline</h1>
+    <p style="color: green;">Este é um parágrafo com estilo inline.</p>
+    <button>Botão Estilizado</button>
+
+    <hr>
+
+    <!-- ================== DICAS ================== -->
+    <h2>Dicas para usar CSS</h2>
+    <ul>
+        <li>Use seletores de classe para aplicar estilos a múltiplos elementos.</li>
+        <li>Utilize seletores de ID para estilos únicos.</li>
+        <li>Prefira classes para reutilização de estilos.</li>
+        <li>Organize seu CSS em arquivos externos para melhor manutenção.</li>
+        <li>Teste diferentes propriedades e valores para ver o efeito visual.</li>
+    </ul>
+
+    <hr>
+
+    <!-- ================== BOTÕES ================== -->
+    <h2>Exemplo de Botões com Diferentes Estilos</h2>
+    <button class="btn-primary">Botão Primário</button>
+    <button class="btn-secondary">Botão Secundário</button>
+
+    <hr>
+
+    <!-- ================== ID E CLASS ================== -->
+    <h1>O que é id e class</h1>
+    <p>O atributo <strong>id</strong> é usado para identificar um elemento único na página. Ele deve ser único dentro do documento HTML.</p>
+    <p>O atributo <strong>class</strong> é usado para classificar elementos em grupos. Vários elementos podem compartilhar a mesma classe.</p>
+
+    <p>Exemplo de uso de <strong>id</strong>:</p>
+    <div id="exemplo-id">Este é um exemplo de um elemento com um ID único.</div>    
+
+    <p>Exemplo de uso de <strong>class</strong>:</p>
+    <div class="exemplo-class">Este é um exemplo de um elemento com uma classe.</div>
+
+    <!-- ================== POST-IT ================== -->
+    <div class="postit">
+        <h2>Resumo da Regra de Ouro</h2>
+        <ul>
+            <li><code>#</code> → <strong>id</strong> (único)</li>
+            <li><code>.</code> → <strong>class</strong> (pode se repetir)</li>
+        </ul>
+    </div>
+
+    <!-- ================== FORMULÁRIO ================== -->
+    <section>
+        <h2>Formulário de Teste</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade">
+            
+            <label for="cor">Cor favorita:</label>
+            <div class="color-picker">
+                <input type="color" id="cor" name="cor">
+                <span id="cor-preview" class="cor-preview"></span>
+            </div>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+    <script>
+        const colorInput = document.getElementById('cor');
+        const colorPreview = document.getElementById('cor-preview');
+
+        colorInput.addEventListener('input', () => {
+            colorPreview.style.backgroundColor = colorInput.value;
+        });
+    </script>
+
+
+    <!-- ================== TABELA ================== -->
+    <section>
+        <h2>Tabela de Exemplo</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Cidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João</td>
+                    <td>25</td>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>30</td>
+                    <td>Rio de Janeiro</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ================== FLEXBOX ================== -->
+    <section>
+        <h2>Exemplo de Flexbox</h2>
+        <div class="flex-container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </section>
+
+    <!-- ================== IMAGEM ================== -->
+    <section>
+        <h2>Exemplo de Imagem</h2>
+        <img src="https://images.unsplash.com/photo-1750210955902-ce0e71765fb1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8" alt="Imagem de teste" class="imagem-teste">
+    </section>
+
+    <!-- ================== LINK ================== -->
+    <section>
+        <h2>Exemplo de Link</h2>
+        <a href="#">Clique aqui para aprender mais CSS</a>
+    </section>
+
+</body>
+</html>

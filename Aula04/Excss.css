@@ -1,0 +1,28 @@
+h1 {
+    color: #0b85ff;
+    background-color: aquamarine;
+    text-align: center;
+    height: 150px;
+    width: 400px;
+}
+
+h1:hover {
+    color: aquamarine;
+    background-color: #0b85ff;
+    text-align: center;
+    padding: 10px;
+}
+h2 {
+    color: #C8553D;
+    background-color: #F28F3B;
+    text-align: center;
+    padding: 10px;
+    margin-right: 200px;
+}
+
+h2:hover {
+    color: #F28F3B;
+    background-color: #C8553D;
+    text-align: center;
+    padding: 10px;
+}
