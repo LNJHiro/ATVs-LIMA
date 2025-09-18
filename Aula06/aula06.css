@@ -1,0 +1,312 @@
+  /* =========================================
+     Reset básico e regras úteis
+     ========================================= */
+  *, *::before, *::after {
+    box-sizing: border-box; /* facilita layout: width inclui padding/border quando quiser */
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;               /* removemos margin do body para controlar manualmente
+                               (OBS: navegadores normalmente aplicam 8px por padrão) */
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.45;
+    background: linear-gradient(180deg,#f6f8fb,#ffffff);
+    color: #222;
+    -webkit-font-smoothing:antialiased;
+    padding: 20px;
+  }
+
+  /* ===== Layout principal ===== */
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+  }
+
+  header.site-header {
+    grid-column: 1 / -1;
+    background: #1e293b;
+    color: white;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(20,30,40,0.12);
+  }
+
+  header.site-header h1 {
+    margin: 0 0 6px 0;
+    font-size: 1.25rem;
+  }
+
+  header.site-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
+
+  /* ===== Menu de navegação lateral (âncoras) ===== */
+  nav.toc {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px;
+    border: 1px solid #e6eef8;
+    height: fit-content;
+    position: sticky;
+    top: 18px;
+  }
+
+  nav.toc h2 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+  }
+
+  nav.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav.toc li + li { margin-top: 8px; }
+
+  nav.toc a {
+    color: #0f172a;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+
+  nav.toc a:hover,
+  nav.toc a:focus {
+    background: #eef6ff;
+  }
+
+  /* ===== Conteúdo principal ===== */
+  main {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px;
+    border: 1px solid #e6eef8;
+    box-shadow: 0 2px 8px rgba(10,20,40,0.04);
+  }
+
+  section + section { margin-top: 22px; }
+
+  h2 { font-size: 1.1rem; margin: 0 0 10px 0; color: #0b1220; }
+  h3 { font-size: 0.98rem; margin: 10px 0; color:#0b1220; }
+  p { margin: 8px 0; }
+
+  /* ===== Área de exemplos visuais ===== */
+  .example {
+    background: #fbfdff;
+    border: 1px dashed #dbeefc;
+    padding: 14px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+
+  pre.code {
+    background: #0b1220;
+    color: #e6f0ff;
+    padding: 12px;
+    border-radius: 6px;
+    overflow: auto;
+    font-size: 0.9rem;
+  }
+
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace; }
+
+  /* ===== Visualizador do Box Model (didático) =====
+     Estrutura com wrappers aninhados para representar cada "camada".
+     margin-wrap -> outline-wrap -> border-wrap -> padding-wrap -> content
+  */
+  .visual-wrap {
+    margin-top: 18px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+
+  /* The "margin" wrapper: we use a background to make the margin area visible in the demo.
+     NOTE: margin is normally transparent; aqui mostramos com cor clara apenas para visualização. */
+  .margin-wrap {
+    background: rgba(99,102,241,0.06); /* área que simula o espaço de margin */
+    padding: 50px; /* para simular margin: 50px em volta da caixa interna */
+    border-radius: 8px;
+    display:inline-block;
+  }
+
+  /* Simula o outline (fica fora da borda). Usamos uma wrapper que tem box-shadow para representar */
+  .outline-wrap {
+    box-shadow: 0 0 0 30px rgba(59,130,246,0.15); /* outline: 30px solid azul (simulado) */
+    border-radius: 6px;
+    display:inline-block;
+  }
+
+  /* border-wrap: representa a borda real */
+  .border-wrap {
+    border: 10px solid #ef4444; /* border: 10px solid red */
+    border-radius: 4px;
+    display:inline-block;
+  }
+
+  /* padding-wrap: adiciona padding real */
+  .padding-wrap {
+    padding: 20px; /* padding: 20px */
+    background: #fff8f8;
+    display:inline-block;
+  }
+
+  /* content: a área de conteúdo, com width/height conforme especificado no exemplo */
+  .content {
+    width: 300px;       /* largura do conteúdo */
+    height: 50px;       /* altura do conteúdo */
+    background: linear-gradient(90deg,#fff1f0,#ffecec);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    color:#7f1d1d;
+    border-radius: 2px;
+  }
+
+  /* Legendas que etiquetam cada camada */
+  .legend {
+    font-size: 0.85rem;
+    margin-top: 8px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .legend span {
+    padding:6px 10px;
+    border-radius:6px;
+    font-size:0.82rem;
+    background:#f8fafc;
+    border:1px solid #e6eef8;
+  }
+
+  /* Exemplo com a caixa "real" usando outline (para ver valores aplicados diretamente) */
+  .caixa-real {
+    margin: 50px;                 /* margin: 50px */
+    width: 300px;
+    height: 50px;
+    padding: 20px;                /* padding: 20px */
+    border: 10px solid red;       /* border: 10px solid red */
+    outline: 30px solid rgba(59,130,246,0.5); /* outline: 30px solid blue (semi-transparente para visual) */
+    background: #fff6f6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#6b1a1a;
+    font-weight:700;
+    border-radius:4px;
+  }
+
+  /* Tabela/caixa de cálculo */
+  .calc {
+    background:#ffffff;
+    border:1px solid #eef6ff;
+    padding:14px;
+    border-radius:8px;
+    margin-top:10px;
+  }
+
+  /* Shorthand examples */
+  .shorthand-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-top:12px;
+  }
+
+  .shorthand-item {
+    padding:12px;
+    background:#fbfdff;
+    border:1px solid #eef6ff;
+    border-radius:8px;
+  }
+
+  /* Exemplo centralização com margin: auto */
+  .center-demo {
+    background:#f3fff8;
+    padding: 18px;
+    border-radius:8px;
+    border:1px solid #e6f6ee;
+  }
+  .center-demo .box {
+    width: 60%;
+    min-width: 200px;
+    margin: 0 auto; /* centraliza horizontalmente */
+    padding: 12px;
+    border: 2px solid #059669;
+    background: #ecfdf5;
+    text-align:center;
+    border-radius:6px;
+  }
+
+  /* Box-sizing example (content-box vs border-box) */
+  .box-sizing-demo {
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    margin-top:12px;
+    flex-wrap:wrap;
+  }
+  .bs-card {
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #e6eef8;
+    background:#fff;
+    width:260px;
+  }
+  .bs-card .preview {
+    width:200px;
+    height:40px;
+    padding:10px;
+    border:6px solid #0ea5a4;
+    background:#e6fffc;
+    margin-bottom:8px;
+  }
+  .bs-card .preview.content-box { box-sizing: content-box; }
+  .bs-card .preview.border-box  { box-sizing: border-box; }
+
+  /* visual effects */
+  .shadow-demo {
+    box-shadow: 3px 5px 4px rgba(0,0,0,0.25);
+    padding:12px;
+    border-radius:8px;
+  }
+  .rounded-demo {
+    border-radius: 18px;
+    padding:12px;
+    background:#fff7ff;
+    border:1px solid #f3e6fb;
+  }
+
+  /* Block vs inline demonstration */
+  .inline-demo { background:#fff; padding:8px; border-radius:6px; border:1px dashed #e6eef8; margin-top:10px; }
+  .inline-demo span { display:inline-block; margin-right:8px; padding:6px; background:#eef2ff; border-radius:4px; }
+  .inline-demo .blockish { display:block; width:100%; margin-top:8px; background:#fff7f0; padding:8px; border:1px dashed #fbe6d9; }
+
+  /* Footer */
+  footer.site-footer {
+    grid-column:1 / -1;
+    margin-top:18px;
+    text-align:center;
+    color:#475569;
+    font-size:0.9rem;
+  }
+
+  /* Responsive: empilha em telas pequenas */
+  @media (max-width: 880px) {
+    .page { grid-template-columns: 1fr; padding:0 6px; }
+    nav.toc { position: static; }
+    .visual-wrap { justify-content:center; }
+  }

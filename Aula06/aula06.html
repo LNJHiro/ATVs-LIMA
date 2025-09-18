@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aula06.css">
+    <title>Aula06</title>
+</head>
+<body>
+  <div class="page">
+    <!-- Cabeçalho semântico -->
+    <header class="site-header" role="banner">
+      <h1>Modelo de Caixas CSS — Guia Rápido e Visual</h1>
+      <p>Material de referência: anatomia da caixa, shorthands, tipos e efeitos visuais. Conteúdo didático e responsivo.</p>
+    </header>
+
+    <!-- Navegação interna com âncoras -->
+    <nav class="toc" aria-label="Navegação da página">
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#introducao">Introdução</a></li>
+        <li><a href="#anatomia">Anatomia da Caixa</a></li>
+        <li><a href="#exemplo-visual">Exemplo Visual</a></li>
+        <li><a href="#shorthands">Shorthands</a></li>
+        <li><a href="#type-boxes">Tipos de Caixa</a></li>
+        <li><a href="#semantica">Tags Semânticas</a></li>
+        <li><a href="#efeitos">Efeitos Visuais</a></li>
+        <li><a href="#resumo">Resumo</a></li>
+      </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main role="main" aria-labelledby="introducao">
+      <!-- Introdução -->
+      <section id="introducao">
+        <h2>Introdução ao Modelo de Caixas</h2>
+        <p>
+          Em CSS, elementos HTML funcionam como <strong>caixas</strong> (containers). Entender o modelo de caixas facilita a criação de layouts previsíveis.
+          O <strong>box model</strong> determina como largura e altura são calculadas e como cada elemento "ocupa" espaço na página.
+        </p>
+        <p><strong>Observação comum:</strong> Muitos navegadores aplicam <code>margin: 8px</code> ao <code>body</code> por padrão. Aqui removemos para demonstrar controles explícitos.</p>
+      </section>
+
+      <!-- Anatomia -->
+      <section id="anatomia" aria-labelledby="anatomia">
+        <h2>Anatomia de uma Caixa</h2>
+        <p>Uma caixa é composta por (de dentro para fora):</p>
+        <ol>
+          <li><strong>Content</strong> — área do conteúdo (texto, imagem) (width/height aplicam-se ao conteúdo quando <code>box-sizing: content-box</code>).</li>
+          <li><strong>Padding</strong> — espaço entre conteúdo e borda (transparente).</li>
+          <li><strong>Border</strong> — borda ao redor do padding (ocupa espaço, pode ter espessura e estilo).</li>
+          <li><strong>Outline</strong> — traço fora da borda, não ocupa espaço no fluxo (útil para acessibilidade/ foco).</li>
+          <li><strong>Margin</strong> — espaço externo que separa a caixa de outras caixas (transparente).</li>
+        </ol>
+
+        <div class="example">
+          <h3>Representação visual (didática)</h3>
+          <!-- A estrutura aninhada abaixo ilustra cada camada. Os nomes nas legendas correspondem. -->
+          <div class="visual-wrap" aria-hidden="true">
+            <div class="margin-wrap">
+              <div class="outline-wrap">
+                <div class="border-wrap">
+                  <div class="padding-wrap">
+                    <div class="content">content (300 × 50)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="legend">
+                <span>margin: 50px (área externa visível no demo)</span>
+                <span>outline: 30px (simulado com box-shadow)</span>
+                <span>border: 10px solid red</span>
+                <span>padding: 20px</span>
+                <span>content: width=300px height=50px</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="calc">
+            <strong>Cálculo do tamanho total (largura):</strong><br>
+            margin-left + outline-left + border-left + padding-left + width + padding-right + border-right + outline-right + margin-right<br>
+            = 50px + 30px + 10px + 20px + 300px + 20px + 10px + 30px + 50px = <strong>520px</strong>
+            <br><br>
+            <strong>Cálculo do tamanho total (altura):</strong><br>
+            50px + 30px + 10px + 20px + 50px + 20px + 10px + 30px + 50px = <strong>320px</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- Exemplo prático com valores aplicados diretamente (único elemento) -->
+      <section id="exemplo-visual">
+        <h2>Exemplo prático: caixa com todas as propriedades</h2>
+        <p>Esta é a mesma caixa mas aplicada diretamente a um único elemento (para ver outline e margin aplicados de verdade):</p>
+
+        <div class="example" aria-live="polite">
+          <!-- Caixa real com os valores exatos descritos no resumo -->
+          <div class="caixa-real" title="Caixa com margin, padding, border e outline aplicada">
+            Caixa com margin/border/padding/outline
+          </div>
+
+          <p style="margin-top:8px; font-size:0.95rem;">
+            Propriedades aplicadas:<br>
+            <code>width:300px; height:50px; padding:20px; border:10px solid red; outline:30px solid blue; margin:50px;</code>
+          </p>
+        </div>
+      </section>
+
+      <!-- Shorthands -->
+      <section id="shorthands">
+        <h2>Shorthands e centralização</h2>
+        <p>Shorthands simplificam múltiplas propriedades em uma única declaração.</p>
+
+        <div class="shorthand-grid">
+          <div class="shorthand-item">
+            <h3>Border (completo vs shorthand)</h3>
+            <pre class="code"><code><!--
+Modo completo:
+border-width: 10px;
+border-style: solid;
+border-color: red;
+
+Shorthand:
+border: 10px solid red;
+--></code></pre>
+          </div>
+
+          <div class="shorthand-item">
+            <h3>Padding / Margin (shorthand)</h3>
+            <pre class="code"><code><!--
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 20px;
+padding-left: 25px;
+
+Shorthand:
+padding: 10px 15px 20px 25px;
+/* ordem: top right bottom left (sentido horário) */
+--></code></pre>
+          </div>
+
+          <div class="shorthand-item">
+            <h3>Centralização horizontal</h3>
+            <p>Para centralizar um bloco com largura fixa: <code>margin: 0 auto;</code></p>
+            <div class="center-demo">
+              <div class="box">Elemento centralizado (margin: 0 auto;)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tipos de caixa -->
+      <section id="type-boxes">
+        <h2>Tipos de Caixa: Block-level vs Inline-level</h2>
+        <p>
+          <strong>Block-level</strong> (ex.: <code>div</code>, <code>section</code>) ocupa a largura disponível e quebra linha.
+          <strong>Inline-level</strong> (ex.: <code>span</code>, <code>a</code>) ocupa apenas o necessário e não força quebra.
+        </p>
+
+        <div class="example inline-demo" aria-hidden="true">
+          <span>inline element</span>
+          <span>outro inline</span>
+          <span>um mais</span>
+
+          <div class="blockish">agora um elemento em display:block ocupa toda a largura disponível</div>
+        </div>
+
+        <h3>Exemplo: box-sizing</h3>
+        <p>Por padrão o box-sizing é <code>content-box</code> (width/height aplicam-se só ao conteúdo). Usando <code>box-sizing: border-box</code> a largura inclui padding e border (facilita layouts).</p>
+
+        <div class="box-sizing-demo">
+          <div class="bs-card">
+            <div class="preview content-box">content-box: width=200px (+ padding + border)</div>
+            <code>box-sizing: content-box;</code>
+            <p style="font-size:0.85rem; margin-top:8px;">Aqui a largura total será maior que 200px por causa de padding/border.</p>
+          </div>
+
+          <div class="bs-card">
+            <div class="preview border-box">border-box: width=200px (inclui padding/border)</div>
+            <code>box-sizing: border-box;</code>
+            <p style="font-size:0.85rem; margin-top:8px;">Aqui a largura total será exatamente 200px — padding/border estão dentro.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tags semânticas -->
+      <section id="semantica">
+        <h2>Tags semânticas do HTML5</h2>
+        <p>Utilizar tags semânticas melhora acessibilidade e SEO. Exemplos: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.</p>
+
+        <div class="example">
+          <h3>Exemplo de estrutura semântica</h3>
+          <pre class="code"><code><!--
+<header>
+  <h1>Site</h1>
+  <nav>links...</nav>
+</header>
+<main>
+  <section>
+    <article>conteúdo</article>
+    <aside>complemento</aside>
+  </section>
+</main>
+<footer>rodapé</footer>
+--></code></pre>
+        </div>
+      </section>
+
+      <!-- Efeitos visuais -->
+      <section id="efeitos">
+        <h2>Efeitos Visuais: Sombra e Bordas Arredondadas</h2>
+        <p>Algumas propriedades úteis para melhorar a interface:</p>
+
+        <div class="shorthand-grid">
+          <div class="shorthand-item shadow-demo">
+            <h3>Sombra</h3>
+            <p>Exemplo: <code>box-shadow: 3px 5px 4px rgba(0,0,0,0.3);</code></p>
+            <div style="margin-top:8px; padding:12px; background:#fff; border-radius:8px;">
+              <div style="height:48px; display:flex;align-items:center;justify-content:center; box-shadow:3px 5px 4px rgba(0,0,0,0.25); border-radius:6px;">
+                Caixa com sombra
+              </div>
+            </div>
+          </div>
+
+          <div class="shorthand-item rounded-demo">
+            <h3>Bordas arredondadas</h3>
+            <p>Exemplo: <code>border-radius: 10px 20px 30px 40px;</code></p>
+            <div style="margin-top:8px; padding:12px;">
+              <div style="height:48px; display:flex;align-items:center;justify-content:center; border-radius:10px 20px 30px 40px; border:2px solid #c084fc;">
+                Cantos personalizados
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resumo -->
+      <section id="resumo">
+        <h2>Resumo / Dicas rápidas</h2>
+        <ul>
+          <li>width/height referem-se ao <em>content</em> quando <code>box-sizing: content-box</code>.</li>
+          <li>Para layouts previsíveis use <code>box-sizing: border-box</code> na raiz.</li>
+          <li>Outline não ocupa espaço — útil para foco acessível.</li>
+          <li>Use shorthands para código mais limpo (<code>padding</code>, <code>border</code>, <code>margin</code>).</li>
+          <li>Centralize blocos com largura fixa: <code>margin: 0 auto;</code>.</li>
+        </ul>
+      </section>
+
+      <footer class="site-footer" role="contentinfo">
+        <p>Material de referência do Box Model — Exemplo didático</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

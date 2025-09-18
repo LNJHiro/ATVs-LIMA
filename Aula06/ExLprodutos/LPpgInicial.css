@@ -1,0 +1,414 @@
+/* ======================================== */
+/*          CONFIGURAÇÕES GLOBAIS           */
+/* ======================================== */
+
+/* --- Importação de Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap' );
+
+/*
+  Fontes escolhidas:
+  - 'Playfair Display': Fonte com serifa, elegante e clássica para títulos (inspirado na Granado).
+  - 'Poppins': Fonte sem serifa, moderna e limpa para textos e botões, garantindo ótima legibilidade.
+*/
+
+/* --- Variáveis de Cor (Paleta Verde Esmeralda) --- */
+:root {
+    --cor-principal: #4A5745; /* Verde-Oliva Profundo */
+    --cor-fundo: #F0EBE3;      /* Areia Suave */
+    --cor-texto: #2D2D2D;      /* Carvão */
+    --cor-detalhe: #C0A062;    /* Dourado Acetinado (para destaques) */
+    --cor-cinza: #8A8A8A;      /* Cinza-Pedra (para textos secundários) */
+    --cor-branco: #FFFFFF;
+}
+
+/* --- Reset e Padrões --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--cor-principal);
+}
+
+/* ======================================== */
+/*              CABEÇALHO (HEADER)          */
+/* ======================================== */
+
+header {
+    background-color: var(--cor-fundo);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-main h1 {
+    font-size: 2rem;
+    color: var(--cor-principal);
+}
+
+.header-main nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.header-main nav a {
+    font-weight: 500;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+/* Efeito de sublinhado no hover */
+.header-main nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-detalhe);
+    transition: width 0.4s ease;
+}
+
+.header-main nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Submenu --- */
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background-color: var(--cor-branco);
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    width: 180px;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.submenu li a:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-principal);
+}
+
+/* --- Ações do Cabeçalho (Busca, Carrinho) --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-box input {
+    border: none;
+    padding: 8px 15px;
+    background-color: transparent;
+    outline: none;
+}
+
+.search-box button {
+    background-color: transparent;
+    border: none;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--cor-cinza);
+}
+
+.header-actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--cor-texto);
+    transition: color 0.3s ease;
+}
+
+.header-actions button:hover {
+    color: var(--cor-principal);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--cor-detalhe);
+    color: var(--cor-branco);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* ======================================== */
+/*              HERO BANNER                 */
+/* ======================================== */
+
+.hero-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' );
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-branco);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: var(--cor-branco);
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: var(--cor-detalhe);
+    color: var(--cor-branco);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #a8874a; /* Dourado mais escuro */
+    transform: translateY(-3px);
+}
+
+/* ======================================== */
+/*          PRODUTOS EM DESTAQUE            */
+/* ======================================== */
+
+.featured-products {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--cor-branco);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.4rem;
+    margin: 15px 0 5px;
+    color: var(--cor-texto);
+}
+
+.product-card .category {
+    font-size: 0.9rem;
+    color: var(--cor-cinza);
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    border: none;
+    padding: 10px 20px;
+    width: 80%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #3b4636; /* Verde mais escuro */
+}
+
+/* ======================================== */
+/*               NEWSLETTER                 */
+/* ======================================== */
+
+.newsletter {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 2rem;
+    color: var(--cor-branco);
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid var(--cor-branco);
+    border-radius: 5px 0 0 5px;
+    background-color: transparent;
+    color: var(--cor-branco);
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form button {
+    padding: 12px 25px;
+    border: 1px solid var(--cor-branco);
+    border-left: none;
+    background-color: var(--cor-branco);
+    color: var(--cor-principal);
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: transparent;
+    color: var(--cor-branco);
+}
+
+/* ======================================== */
+/*                 RODAPÉ                   */
+/* ======================================== */
+
+footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 30px 5%;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #aaa;
+    font-size: 1.3rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--cor-detalhe);
+}
