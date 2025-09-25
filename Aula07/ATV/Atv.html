@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog sobre cultura skate, música e estilo de vida street">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Atv.css">
+    <title>SkateStreet - Cultura Urbana</title>
+</head>
+<style>
+    :root {
+        --primary-color: #ff6b35;
+        --secondary-color: #2a2a2a;
+        --accent-color: #ffd166;
+        --text-light: #f8f9fa;
+        --text-dark: #212529;
+    }
+    
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+    
+    .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em #0000001a, inset 0 0.125em 0.5em #00000026;
+    }
+    
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+    
+    .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+    }
+    
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+    
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .btn-bd-primary {
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--text-light);
+        --bs-btn-bg: var(--primary-color);
+        --bs-btn-border-color: var(--primary-color);
+        --bs-btn-hover-color: var(--text-light);
+        --bs-btn-hover-bg: #e55a2e;
+        --bs-btn-hover-border-color: #e55a2e;
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #cc4a25;
+        --bs-btn-active-border-color: #cc4a25;
+    }
+    
+    .bd-mode-toggle {
+        z-index: 1500;
+    }
+    
+    .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+    }
+    
+    .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+    }
+    
+    .skate-bg {
+        background: linear-gradient(rgba(42, 42, 42, 0.8), rgba(42, 42, 42, 0.8)), 
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232a2a2a"/><path d="M20,20 L80,80 M80,20 L20,80" stroke="%23ff6b35" stroke-width="2"/></svg>');
+        background-size: cover;
+        color: var(--text-light);
+    }
+    
+    .navbar-custom {
+        background-color: var(--secondary-color) !important;
+        border-bottom: 3px solid var(--primary-color);
+    }
+    
+    .nav-link-custom {
+        color: var(--text-light) !important;
+        font-weight: 500;
+    }
+    
+    .nav-link-custom:hover {
+        color: var(--primary-color) !important;
+    }
+    
+    .featured-post {
+        background: linear-gradient(135deg, var(--secondary-color), #3a3a3a);
+        color: var(--text-light);
+        border-left: 5px solid var(--primary-color) !important;
+    }
+    
+    .blog-header-logo {
+        font-family: 'Impact', sans-serif;
+        font-size: 2.5rem;
+        color: var(--primary-color) !important;
+        text-shadow: 2px 2px 0px var(--secondary-color);
+    }
+    
+    .skate-icon {
+        filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(340deg) brightness(118%) contrast(119%);
+    }
+    
+    .tag-category {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
+</style>
+<body class="skate-bg">
+    
+    <header class="p-3 mb-3 border-bottom navbar-custom">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+              <svg class="bi me-2 skate-icon" width="40" height="32" role="img" aria-label="Skate">
+                <use xlink:href="#skateboard"></use>
+              </svg>
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="#" class="nav-link px-2 nav-link-custom">Início</a></li>
+              <li><a href="#" class="nav-link px-2 nav-link-custom">Manobras</a></li>
+              <li><a href="#" class="nav-link px-2 nav-link-custom">Eventos</a></li>
+              <li><a href="#" class="nav-link px-2 nav-link-custom">Música</a></li>
+            </ul>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input type="search" class="form-control" placeholder="Pesquisar..." aria-label="Search">
+            </form>
+            <div class="dropdown text-end">
+              <a href="#" class="d-block text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://avatars.githubusercontent.com/u/201267794?v=4" alt="Skateboarder" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="#">Novo Post</a></li>
+                <li><a class="dropdown-item" href="#">Configurações</a></li>
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sair</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+      <symbol id="skateboard" viewBox="0 0 16 16">
+        <path d="M10 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 0a6 6 0 0 0-6 6v4a6 6 0 0 0 12 0V6A6 6 0 0 0 6 0zm0 14a4 4 0 0 1-4-4V6a4 4 0 0 1 8 0v4a4 4 0 0 1-4 4z"/>
+      </symbol>
+    </svg>
+    
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            <a class="link-secondary" href="#">Newsletter</a>
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-decoration-none" href="#">SK8STREET</a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24">
+                <title>Search</title>
+                <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                <path d="M21 21l-5.2-5.2"></path>
+              </svg>
+            </a>
+            <a class="btn btn-sm btn-outline-warning" href="#">Inscrever-se</a>
+          </div>
+        </div>
+      </header>
+      
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a class="nav-item nav-link link-body-emphasis active" href="#">Skate</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Música</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Eventos</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Manobras</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Graffiti</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Marcas</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Vídeos</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Entrevistas</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">Picos</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#">História</a>
+        </nav>
+      </div>
+    </div>
+    
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis featured-post">
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4 fst-italic">Cultura Urbana: Do Asfalto aos Palcos</h1>
+          <p class="lead my-3">Como o skate, o punk rock e o rap se encontraram nas ruas brasileiras e criaram um movimento único, com Charlie Brown Jr. como um dos grandes expoentes.</p>
+          <p class="lead mb-0">
+            <a href="#" class="text-warning fw-bold">Continuar lendo...</a>
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-post">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 tag-category">Manobras</strong>
+              <h3 class="mb-0">Ollie: Dominando o Básico</h3>
+              <div class="mb-1 text-body-secondary">12 de Nov</div>
+              <p class="card-text mb-auto">Tutorial completo para aprender o fundamento de todas as manobras de skate. Do posicionamento aos primeiros pulos.</p>
+              <a href="#" class="icon-link gap-1 icon-link-hover stretched-link text-warning">
+                Continuar lendo
+                <svg class="bi" aria-hidden="true">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+
+                <!-- <img src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Skate Ollie"> -->
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-post">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 tag-category">Música</strong>
+              <h3 class="mb-0">Legado do Chorão</h3>
+              <div class="mb-1 text-body-secondary">11 de Nov</div>
+              <p class="mb-auto">Como Alexandre Magno Abrão revolucionou a cena musical brasileira unindo skate, rap e rock numa mistura única.</p>
+              <a href="#" class="icon-link gap-1 icon-link-hover stretched-link text-warning">
+                Continuar lendo
+                <svg class="bi" aria-hidden="true">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+
+                <!-- <img src="https://s2-gq.glbimg.com/5djhBXF-6tEV03nVAlKWXDZV4s8=/0x0:2000x2965/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_71a8fe14ac6d40bd993eb59f7203fe6f/internal_photos/bs/2023/F/k/MdFMeASWSwr700GZ8bBQ/2021-04-07-gq114-esschorao-1.jpeg" alt="Chorão"> -->
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">Do Gueto</h3>
+          
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Skate na Cena Paulista dos Anos 90</h2>
+            <p class="blog-post-meta">1 de Janeiro, 2024 por <a href="#" class="text-warning">Sk8Marcos</a></p>
+            
+            <p>Santos, São Paulo. Nos anos 90, enquanto o skate ganhava as ruas brasileiras, uma banda começava a misturar o som do skate punk com a levada do rap. Era o início da história do Charlie Brown Jr.</p>
+            <hr>
+            <p>As pistas de skate viraram palco para uma nova forma de expressão. "Cidade Olímpica", "Skatista" e "Zóio de Lula" se tornaram hinos não só dos skatistas, mas de toda uma geração que buscava identidade na cultura urbana.</p>
+            
+            <h3>Do Half-Pipe às Paradas de Sucesso</h3>
+            <p>Enquanto manobras como o kickflip e o heelflip dominavam as pistas, o Charlie Brown Jr. levava a essência do skate para as rádios de todo o país.</p>
+            
+            <blockquote class="blockquote">
+              <p>"O skate me ensinou a cair e levantar, na vida e na música" - Chorão</p>
+            </blockquote>
+            
+            <h3>Marcas que Fizeram História</h3>
+            <p>Algumas marcas se tornaram ícones dessa época:</p>
+            <ul>
+              <li>Element - Estética clean e técnicas inovadoras</li>
+              <li>Flip - Ousadia e atitude</li>
+              <li>Santa Cruz - Clássico do street style</li>
+            </ul>
+            
+            <p>Essas marcas não só equipavam os skatistas, mas definiam um estilo de vida que misturava esporte, música e arte urbana.</p>
+          </article>
+          
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Eventos que Marcaram Época</h2>
+            <p class="blog-popst-meta">23 de Dezembro, 2023 por <a href="#" class="text-warning">RitaLee</a></p>
+            
+            <p>Os campeonatos de skate dos anos 2000 não eram apenas competições, mas encontros de toda a cultura urbana.</p>
+            
+            <h3>Principais Eventos da Época</h3>
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th>Evento</th>
+                  <th>Local</th>
+                  <th>Ano</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Brasil Skate Cup</td>
+                  <td>São Paulo</td>
+                  <td>2001</td>
+                </tr>
+                <tr>
+                  <td>X Games Brasil</td>
+                  <td>Rio de Janeiro</td>
+                  <td>2003</td>
+                </tr>
+                <tr>
+                  <td>Circuito Petrobras</td>
+                  <td>Vários estados</td>
+                  <td>2005-2010</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>Esses eventos não só revelaram talentos do skate nacional, mas também consolidaram a cultura urbana como movimento legítimo e influente.</p>
+          </article>
+          
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">A Moda Streetwear Ontem e Hoje</h2>
+            <p class="blog-post-meta">14 de Dezembro, 2023 por <a href="#" class="text-warning">StyleZ</a></p>
+            
+            <p>Do boné virado para trás às calças largas, a moda do skate influenciou gerações e continua evoluindo.</p>
+            
+            <h3>Elementos que Definem o Estilo</h3>
+            <ul>
+              <li>Tênis de skate - mais que proteção, uma declaração de estilo</li>
+              <li>Camisetas oversized - conforto e identidade</li>
+              <li>Acessórios - de pulseiras a correntes, cada detalhe conta uma história</li>
+            </ul>
+            
+            <p>O estilo skate/surf, popularizado pelo Charlie Brown Jr., continua influenciando novas gerações, mostrando que a autenticidade nunca sai de moda.</p>
+          </article>
+          
+          <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-warning rounded-pill" href="#">Posts Antigos</a>
+            <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Posts Novos</a>
+          </nav>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem">
+            <div class="p-4 mb-3 bg-dark rounded text-light">
+              <h4 class="fst-italic">Sobre</h4>
+              <p class="mb-0">SK8STREET é um espaço dedicado à cultura urbana em suas múltiplas expressões: skate, música, arte e estilo de vida. Aqui celebramos a liberdade sobre rodas e a batida que ecoa das pistas para as ruas.</p>
+            </div>
+            
+            <div>
+              <h4 class="fst-italic text-light">Posts Recentes</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      <rect width="100%" height="100%" fill="#ff6b35"></rect>
+                    </svg>
+                    <div class="col-lg-8">
+                      <h6 class="mb-0 text-light">Melhores Picos de Skate em SP</h6>
+                      <small class="text-body-secondary">15 de Janeiro, 2024</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      <rect width="100%" height="100%" fill="#ff6b35"></rect>
+                    </svg>
+                    <div class="col-lg-8">
+                      <h6 class="mb-0 text-light">Discografia Comentada: Charlie Brown Jr.</h6>
+                      <small class="text-body-secondary">14 de Janeiro, 2024</small>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      <rect width="100%" height="100%" fill="#ff6b35"></rect>
+                    </svg>
+                    <div class="col-lg-8">
+                      <h6 class="mb-0 text-light">Graffiti: Arte ou Vandalismo?</h6>
+                      <small class="text-body-secondary">13 de Janeiro, 2024</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-4">
+              <h4 class="fst-italic text-light">Arquivos</h4>
+              <ol class="list-unstyled mb-0">
+                <li><a href="#" class="text-warning">Março 2023</a></li>
+                <li><a href="#" class="text-warning">Fevereiro 2023</a></li>
+                <li><a href="#" class="text-warning">Janeiro 2023</a></li>
+                <li><a href="#" class="text-warning">Dezembro 2022</a></li>
+                <li><a href="#" class="text-warning">Novembro 2022</a></li>
+                <li><a href="#" class="text-warning">Outubro 2022</a></li>
+              </ol>
+            </div>
+            
+            <div class="p-4">
+              <h4 class="fst-italic text-light">Redes Sociais</h4>
+              <ol class="list-unstyled">
+                <li><a href="#" class="text-warning">Instagram</a></li>
+                <li><a href="#" class="text-warning">YouTube</a></li>
+                <li><a href="#" class="text-warning">TikTok</a></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="py-5 text-center text-body-secondary bg-dark">
+      <p>
+        SkateStreet - Cultura Urbana &copy; 2024
+        <br>
+        "Lutar pelo que é meu, e ninguém vai me parar" - Chorão
+      </p>
+      <p class="mb-0"><a href="#" class="text-warning">Voltar ao topo</a></p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
