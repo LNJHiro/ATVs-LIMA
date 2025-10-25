@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Vitrine 2025</title>
+    <!-- Link para o CSS principal (o mesmo da página inicial) -->
+    <link rel="stylesheet" href="LPpgInicial.css">
+    <!-- Link para o CSS específico do carrinho -->
+    <link rel="stylesheet" href="Carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ======= HEADER (O mesmo da página inicial ) ======= -->
+    <header>
+        <div class="header-top">
+            <p>Bem-vindo à Vitrine 2025 — Moda, Essência e Estilo</p>
+        </div>
+        <div class="header-main">
+            <h1><a href="index.html">Vitrine 2025</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="LPpgInicial.html">Início</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Produtos </a>
+                        <!-- <ul class="submenu">
+                            <li><a href="">Roupas</a></li>
+                            <li><a href="">Perfumes</a></li>
+                            <li><a href="">Bolsas</a></li>
+                            <li><a href="">Acessórios</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="wishlist"><i class="fas fa-heart"></i></button>
+                <a href="carrinho.html" class="cart-link">
+                    <button class="cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">3</span></button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= CONTEÚDO DO CARRINHO ======= -->
+    <main class="cart-container">
+        <div class="cart-header">
+            <h2>Meu Carrinho</h2>
+            <a href="LPpgInicial.html" class="continue-shopping">Continuar comprando</a>
+        </div>
+
+        <div class="cart-content">
+            <!-- Lista de Itens do Carrinho -->
+            <div class="cart-items">
+                <!-- Item 1 -->
+                <div class="cart-item">
+                <img src="https://images.unsplash.com/photo-1602303894456-398ce544d90b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sabonete Tradicional">
+                    <div class="item-details">
+                        <h3>Summer Dress</h3>
+                        <p class="item-category">Roupas</p>
+                        <button class="remove-item">Remover</button>
+                    </div>
+                    <div class="item-quantity">
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="item-price">
+                        <p>R$ 169,90</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="cart-item">
+                <img src="https://images.unsplash.com/photo-1458538977777-0549b2370168?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Perfume Lavanda">
+                    <div class="item-details">
+                        <h3>Perfume Lavanda</h3>
+                        <p class="item-category">Perfumes</p>
+                        <button class="remove-item">Remover</button>
+                    </div>
+                    <div class="item-quantity">
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="item-price">
+                        <p>R$ 89,90</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="cart-item">
+                <img src="https://images.unsplash.com/photo-1601049413574-214d105b26e4?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Creme Hidratante">
+                    <div class="item-details">
+                        <h3>Creme Hidratante</h3>
+                        <p class="item-category">Cuidados Corporais</p>
+                        <button class="remove-item">Remover</button>
+                    </div>
+                    <div class="item-quantity">
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="item-price">
+                        <p>R$ 34,90</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumo do Pedido -->
+            <div class="order-summary">
+                <h3>Resumo do Pedido</h3>
+                <div class="summary-row">
+                    <span>Subtotal (3 itens )</span>
+                    <span>R$ 137,70</span>
+                </div>
+                <div class="summary-row">
+                    <span>Frete</span>
+                    <span>Grátis</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>R$ 137,70</span>
+                </div>
+                <button class="checkout-button">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======= RODAPÉ (O mesmo da página inicial) ======= -->
+    <footer>
+        <p>&copy; 2025 Vitrine 2025 - Moda, Essência e Estilo. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </footer>
+    <script src="Carrinho.js"></script>
+</body>
+</html>

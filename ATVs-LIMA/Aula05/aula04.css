@@ -1,0 +1,179 @@
+/* ================== IMPORTAÇÃO DE FONTE ================== */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/* ================== ESTILIZAÇÃO GERAL ================== */
+body {
+    background-color: #fefefe;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #4b0082;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* ================== BOTÕES ================== */
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #4b0082;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #6a0dad;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+.btn-secondary:hover {
+    background-color: #aaa;
+}
+
+/* ================== ID E CLASS ================== */
+#exemplo-id {
+    border: 2px solid #4b0082;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f0f0ff;
+}
+
+.exemplo-class {
+    border: 2px solid #ff6347;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff0f0;
+}
+
+/* ================== POST-IT ================== */
+.postit {
+  position: fixed;         /* fixa na tela */
+  top: 100px;              /* distância do topo */
+  right: 20px;             /* distância da lateral direita */
+  width: 220px;            /* largura do post-it */
+  background: #fff8a6;     /* cor típica de post-it */
+  border: 1px solid #e6d86a;
+  padding: 15px;
+  font-family: 'Ubuntu', sans-serif;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg); /* leve inclinação */
+}
+
+.postit h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  text-align: center;
+  color: #444;
+}
+
+.postit ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.postit li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ================== FORMULÁRIO ================== */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+form input, form select {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* ================== TABELA ================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+
+/* ================== FLEXBOX ================== */
+.flex-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+.flex-container .item {
+    flex: 1;
+    padding: 15px;
+    background-color: #e0e0ff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* ================== IMAGENS ================== */
+.imagem-teste {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* ================== LINKS ================== */
+a {
+    color: #4b0082;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================== PSEUDO-ELEMENTOS ================== */
+ul li::before {
+    content: "✅ ";
+}
+
+/* ================== COLOR PICKER ================== */
+.color-picker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cor-preview {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Atualiza visualização da cor */
+input[type="color"] {
+    cursor: pointer;
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberNews - Segurança Digital</title>
+    <link rel="stylesheet" href="InfoTec.css">
+    <!-- Chart.js para o dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <div class="logo">CyberNews</div>
+                <div class="tagline">Sua fonte confiável de notícias sobre segurança digital</div>
+            </div>
+            <div>
+                <small style="color:var(--gray)">Última atualização: <strong>23 de Outubro, 2025</strong></small>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Notícias</a></li>
+                <li><a href="#">Artigos</a></li>
+                <li><a href="#">Tutoriais</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <main>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">Ataques de Ransomware Aumentam 150% no Último Trimestre</h1>
+                        <div class="article-meta">Por João Silva | 15 de Outubro, 2023 | CyberSecurity</div>
+                    </div>
+
+                    <div class="article-content">
+                        <p>Empresas de todos os tamanhos estão enfrentando uma onda crescente de ataques de ransomware,
+                            com um aumento de 150% nos casos reportados no último trimestre, segundo dados da Agência de
+                            Segurança Cibernética Nacional.</p>
+
+                        <!-- Dashboard / Gráfico -->
+                <div class="dashboard" aria-hidden="false">
+                    <div class="dashboard-header">
+                        <h3>Dashboard: Ataques de Ransomware - Brasil e Estados (últimos 12 meses)</h3>
+                        <div style="color:var(--gray)">Fonte: Agência Nacional de Segurança Cibernética</div>
+                    </div>
+
+                    <!-- Controles de Visualização -->
+                    <div class="control-group">
+                        <label>Selecionar Estados:</label>
+                        <div class="state-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="brasil" checked> Brasil Total
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="sp" checked> São Paulo
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="rj"> Rio de Janeiro
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="mg"> Minas Gerais
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="rs"> Rio Grande do Sul
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="pr"> Paraná
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="sc"> Santa Catarina
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="ba"> Bahia
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="go"> Goiás
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="pe"> Pernambuco
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <button id="selectAll" class="btn-outline">Selecionar Todos</button>
+                        <button id="deselectAll" class="btn-outline">Limpar Seleção</button>
+                    </div>
+                </div>
+
+                <!-- KPI row atualizada -->
+                <div class="kpi-row">
+                    <div class="kpi">
+                        <div class="value" style="font-weight:800;color:var(--accent);">+125%</div>
+                        <div class="label">Aumento Brasil</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="value" style="font-weight:800;color:var(--warning);">421</div>
+                        <div class="label">Casos Out/25</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="value" style="font-weight:800;color:var(--primary);">10</div>
+                        <div class="label">Estados disponíveis</div>
+                    </div>
+                </div>
+
+                    <canvas id="ransomwareChart"></canvas>
+                </div>
+
+                        <p>Os especialistas atribuem esse aumento ao crescimento do trabalho remoto e à adoção acelerada
+                            de tecnologias digitais durante a pandemia, que criaram novas vulnerabilidades em sistemas
+                            corporativos.</p>
+
+                        <p>"Muitas organizações ainda não implementaram medidas básicas de segurança, como autenticação
+                            multifator e backups regulares", alerta Maria Santos, especialista em segurança cibernética.
+                        </p>
+
+                        <h2>Como se Proteger</h2>
+                        <p>Para se proteger contra esses ataques, especialistas recomendam:</p>
+                        <ul>
+                            <li>Implementar autenticação multifator em todos os sistemas</li>
+                            <li>Manter backups regulares e testá-los periodicamente</li>
+                            <li>Atualizar regularmente todos os softwares e sistemas</li>
+                            <li>Treinar funcionários para identificar tentativas de phishing</li>
+                        </ul>
+
+                        <div class="video">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/0rkpa2jLqFg?si=_-6wQ_ZYM98JMK27"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <h3>Notícias Relacionadas</h3>
+                        <div class="image-gallery">
+                            <div class="image-placeholder">
+                                <strong>Operação Nacional: Combate a Ransomware</strong>
+                                <p style="color:var(--gray);font-size:0.9rem">Agência de segurança coordenou ação com
+                                    ISPs.</p>
+                            </div>
+                            <div class="image-placeholder">
+                                <strong>Nova versão de ransomware X</strong>
+                                <p style="color:var(--gray);font-size:0.9rem">Variante que usa técnicas de exfiltração
+                                    avançada.</p>
+                            </div>
+                            <div class="image-placeholder">
+                                <strong>Como restaurar backups com segurança</strong>
+                                <p style="color:var(--gray);font-size:0.9rem">Checklist rápido para empresas.</p>
+                            </div>
+                        </div>
+
+                        <p style="margin-top:14px;color:var(--gray);font-size:0.9rem">* Dados ilustrativos para
+                            demonstração do dashboard — troque pelos dados reais da sua fonte.</p>
+                    </div>
+                </article>
+            </main>
+
+            <aside>
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p>Inscreva-se para receber as últimas notícias sobre CyberSecurity diretamente no seu e-mail.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="text" id="nomeNews" placeholder="Seu nome" required>
+                        <input type="email" id="emailNews" placeholder="Seu e-mail" required>
+                        <button type="submit">Inscrever-se</button>
+                    </form>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Artigos Populares</h3>
+                    <ul>
+                        <li><a href="#">Como criar senhas seguras</a></li>
+                        <li><a href="#">Os 10 maiores vazamentos de dados de 2024</a></li>
+                        <li><a href="#">Guia de privacidade para redes sociais</a></li>
+                        <li><a href="#">Tendências em segurança para 2025</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categorias</h3>
+                    <ul>
+                        <li><a href="#">Ransomware</a></li>
+                        <li><a href="#">Phishing</a></li>
+                        <li><a href="#">Proteção de Dados</a></li>
+                        <li><a href="#">Legislação</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Últimas Notícias</h3>
+                    <ul>
+                        <li><a href="#">Zero-day explorado em software X</a></li>
+                        <li><a href="#">Setor financeiro investe em MDR</a></li>
+                        <li><a href="#">Campanha de phishing mira clientes de banco</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>CyberNews &copy; 2025 - Todos os direitos reservados</p>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+                <p>Contato: contato@cybernews.com | (11) 99999-9999</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Chart.js and page script -->
+    <script>
+        // Dados completos para todos os estados
+const labels = ["Nov/24", "Dez/24", "Jan/25", "Fev/25", "Mar/25", "Abr/25", "Mai/25", "Jun/25", "Jul/25", "Ago/25", "Set/25", "Out/25"];
+
+const stateData = {
+    'brasil': {
+        label: 'Brasil Total',
+        data: [187, 165, 234, 198, 215, 192, 243, 298, 312, 356, 387, 421],
+        color: 'rgba(61,220,180,0.95)',
+        bgColor: 'rgba(61,220,180,0.12)',
+        borderWidth: 3,
+        aumento: '+125%'
+    },
+    'sp': {
+        label: 'São Paulo',
+        data: [58, 49, 72, 61, 67, 59, 75, 92, 96, 112, 124, 138],
+        color: 'rgba(255,193,7,0.9)',
+        bgColor: 'rgba(255,193,7,0.1)',
+        borderWidth: 2,
+        aumento: '+138%'
+    },
+    'rj': {
+        label: 'Rio de Janeiro',
+        data: [42, 38, 55, 47, 51, 45, 58, 71, 74, 85, 92, 98],
+        color: 'rgba(33,150,243,0.9)',
+        bgColor: 'rgba(33,150,243,0.1)',
+        borderWidth: 2,
+        aumento: '+133%'
+    },
+    'mg': {
+        label: 'Minas Gerais',
+        data: [35, 31, 46, 39, 42, 37, 48, 59, 62, 71, 77, 82],
+        color: 'rgba(156,39,176,0.9)',
+        bgColor: 'rgba(156,39,176,0.1)',
+        borderWidth: 2,
+        aumento: '+134%'
+    },
+    'rs': {
+        label: 'Rio Grande do Sul',
+        data: [28, 25, 37, 31, 34, 30, 38, 47, 49, 56, 61, 65],
+        color: 'rgba(76,175,80,0.9)',
+        bgColor: 'rgba(76,175,80,0.1)',
+        borderWidth: 2,
+        aumento: '+132%'
+    },
+    'pr': {
+        label: 'Paraná',
+        data: [32, 28, 41, 35, 38, 33, 43, 53, 55, 63, 69, 74],
+        color: 'rgba(244,67,54,0.9)',
+        bgColor: 'rgba(244,67,54,0.1)',
+        borderWidth: 2,
+        aumento: '+131%'
+    },
+    'sc': {
+        label: 'Santa Catarina',
+        data: [24, 21, 31, 26, 29, 25, 32, 39, 41, 47, 51, 55],
+        color: 'rgba(255,152,0,0.9)',
+        bgColor: 'rgba(255,152,0,0.1)',
+        borderWidth: 2,
+        aumento: '+129%'
+    },
+    'ba': {
+        label: 'Bahia',
+        data: [26, 23, 34, 29, 31, 27, 35, 43, 45, 52, 57, 61],
+        color: 'rgba(0,188,212,0.9)',
+        bgColor: 'rgba(0,188,212,0.1)',
+        borderWidth: 2,
+        aumento: '+135%'
+    },
+    'go': {
+        label: 'Goiás',
+        data: [19, 17, 25, 21, 23, 20, 26, 32, 34, 39, 43, 46],
+        color: 'rgba(233,30,99,0.9)',
+        bgColor: 'rgba(233,30,99,0.1)',
+        borderWidth: 2,
+        aumento: '+142%'
+    },
+    'pe': {
+        label: 'Pernambuco',
+        data: [22, 19, 28, 24, 26, 23, 29, 36, 38, 44, 48, 52],
+        color: 'rgba(139,195,74,0.9)',
+        bgColor: 'rgba(139,195,74,0.1)',
+        borderWidth: 2,
+        aumento: '+136%'
+    }
+};
+
+// Inicializar gráfico
+const ctx = document.getElementById('ransomwareChart').getContext('2d');
+let ransomwareChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: []
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+            mode: 'index',
+            intersect: false
+        },
+        scales: {
+            x: {
+                grid: { display: false },
+                ticks: { color: 'rgba(255,255,255,0.8)' }
+            },
+            y: {
+                beginAtZero: true,
+                ticks: { color: 'rgba(255,255,255,0.8)' },
+                grid: {
+                    color: 'rgba(255,255,255,0.03)'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                labels: { 
+                    color: 'rgba(255,255,255,0.9)',
+                    usePointStyle: true,
+                    boxWidth: 12
+                }
+            },
+            tooltip: {
+                backgroundColor: 'rgba(0,0,0,0.85)',
+                titleColor: '#fff',
+                bodyColor: '#fff',
+                usePointStyle: true
+            }
+        }
+    }
+});
+
+// Função para atualizar o gráfico baseado nas seleções
+function updateChart() {
+    const checkboxes = document.querySelectorAll('.state-checkboxes input:checked');
+    const selectedStates = Array.from(checkboxes).map(cb => cb.value);
+    
+    // Atualizar KPIs dinamicamente
+    const totalStates = document.querySelectorAll('.state-checkboxes input').length;
+    document.querySelector('.kpi-row .kpi:nth-child(3) .value').textContent = selectedStates.length;
+    
+    // Se Brasil está selecionado, mostrar seu aumento
+    if (selectedStates.includes('brasil')) {
+        document.querySelector('.kpi-row .kpi:nth-child(1) .value').textContent = stateData.brasil.aumento;
+        document.querySelector('.kpi-row .kpi:nth-child(2) .value').textContent = stateData.brasil.data[11]; // Último mês
+    }
+    
+    // Criar novos datasets
+    const newDatasets = selectedStates.map(stateId => {
+        const state = stateData[stateId];
+        return {
+            label: state.label,
+            data: state.data,
+            fill: stateId === 'brasil',
+            backgroundColor: state.bgColor,
+            borderColor: state.color,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: state.color,
+            tension: 0.25,
+            pointRadius: stateId === 'brasil' ? 4 : 3,
+            borderWidth: state.borderWidth,
+            borderDash: stateId === 'brasil' ? [] : [0]
+        };
+    });
+    
+    ransomwareChart.data.datasets = newDatasets;
+    ransomwareChart.update();
+}
+// Event listeners para os checkboxes
+document.querySelectorAll('.state-checkboxes input').forEach(checkbox => {
+    checkbox.addEventListener('change', updateChart);
+});
+
+// Botões de seleção total/limpar
+document.getElementById('selectAll').addEventListener('click', () => {
+    document.querySelectorAll('.state-checkboxes input').forEach(cb => {
+        cb.checked = true;
+    });
+    updateChart();
+});
+
+document.getElementById('deselectAll').addEventListener('click', () => {
+    document.querySelectorAll('.state-checkboxes input').forEach(cb => {
+        cb.checked = false;
+    });
+    updateChart();
+});
+
+// Inicializar gráfico com estados padrão
+updateChart();
+
+// Interatividade com o filtro
+document.getElementById('stateSelect').addEventListener('change', function(e) {
+    const selectedState = e.target.value;
+    
+    // Dados dinâmicos baseados no estado selecionado
+    const stateData = {
+        'sp': incidentsSP,
+        'rj': incidentsRJ,
+        'mg': [25, 20, 35, 28, 26, 25, 32, 40, 42, 48, 52, 58],
+        'rs': [20, 15, 28, 22, 20, 19, 25, 32, 35, 40, 45, 50]
+    };
+    
+    // Atualiza a segunda série do gráfico
+    ransomwareChart.data.datasets[1].data = stateData[selectedState];
+    ransomwareChart.data.datasets[1].label = e.target.options[e.target.selectedIndex].text;
+    ransomwareChart.update();
+});
+
+        // Newsletter simple handler with toast
+        document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nome = document.getElementById('nomeNews').value.trim();
+            const email = document.getElementById('emailNews').value.trim();
+            // show toast
+            const toast = document.createElement('div');
+            toast.className = 'toast show';
+            toast.innerHTML = '<strong>Obrigado, ' + (nome ? nome : 'leitor') + '</strong><div style="font-size:0.9rem;color:var(--light);margin-top:6px">Você foi inscrito com ' + email + '</div>';
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.classList.remove('show'); toast.remove(); }, 3600);
+            // reset (simulação)
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
