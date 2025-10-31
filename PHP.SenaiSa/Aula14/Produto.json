@@ -1,0 +1,32 @@
+{
+    "3": {
+        "Codigo": 3,
+        "Nome": "queijo brie",
+        "Preco": 20
+    },
+    "4": {
+        "Codigo": 4,
+        "Nome": "iorgute grego",
+        "Preco": 20
+    },
+    "5": {
+        "Codigo": 5,
+        "Nome": "Guaran\u00e1 Jesus",
+        "Preco": 20
+    },
+    "6": {
+        "Codigo": 6,
+        "Nome": "Bolacha Bono",
+        "Preco": 20
+    },
+    "7": {
+        "Codigo": 7,
+        "Nome": "Desinfetante Barbarex",
+        "Preco": 15
+    },
+    "8": {
+        "Codigo": 8,
+        "Nome": "Prestobarba Bic",
+        "Preco": 15
+    }
+}
